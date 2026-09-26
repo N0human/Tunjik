@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f2efe8"/>
+  <g transform="translate(32 34) rotate(-4)">
+    <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="#b5822a" stroke-width="2"/>
+    <text x="0" y="13" text-anchor="middle" fill="#293e43"
+      font-family="Noto Serif Armenian, PT Serif, Georgia, serif" font-size="34">Թ</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+/* Self-hosted faces. The app must run with no network at all, so the four
+   families come from node_modules through @fontsource instead of Google
+   Fonts. Only the weights the stylesheet actually uses are imported.
+
+   Weights: 400 everywhere, 500 for the language picker (--mono) and 700 for
+   the wordmark (--serif). 600 was requested from the CDN but never used.
+
+   Subsets: only Noto Serif Armenian and Noto Sans Armenian ship Armenian
+   glyphs. Manrope, DM Mono and PT Serif are Latin-only, which is exactly why
+   the stylesheet lists an Armenian face as the fallback after each of them. */
+@import '@fontsource/noto-serif-armenian/400.css';
+@import '@fontsource/noto-serif-armenian/500.css';
+@import '@fontsource/noto-serif-armenian/700.css';
+@import '@fontsource/noto-sans-armenian/400.css';
+@import '@fontsource/noto-sans-armenian/500.css';
+@import '@fontsource/noto-sans-armenian/700.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/dm-mono/400.css';
+@import '@fontsource/dm-mono/500.css';
+@import '@fontsource/pt-serif/400.css';
+@import '@fontsource/pt-serif/700.css';

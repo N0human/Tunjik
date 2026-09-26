@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "decks": "Decks",
+    "stats": "Statistics",
+    "about": "About"
+  },
+  "common": {
+    "language": "Language",
+    "back": "Back",
+    "loading": "Loading",
+    "planned": "Planned",
+    "plannedHint": "This screen arrives with the lexicon and the progress store."
+  },
+  "home": {
+    "eyebrow": "Թունջիկներ",
+    "title": "Games for learning Armenian words",
+    "lead": "The lexicon is merged from Arahet's teaching items and a thematic vocabulary of 2000 words. Fifteen themes, four levels, fourteen games — from pair matching to writing from memory.",
+    "folio": "Folio 1",
+    "artTitle": "A spring toy",
+    "artDescription": "Placeholder art instead of a mascot: the mascot is planned for the second version.",
+    "folioSideNote": "թունջիկ · a hopping toy",
+    "start": "Open the decks",
+    "metaWords": "entries in the pool",
+    "metaDecks": "decks",
+    "metaGames": "games",
+    "metaAudio": "materials with audio",
+    "contentsLabel": "Contents",
+    "contentsTitle": "Fourteen games",
+    "contentsSub": "The board games have their own field; the round games share one question shape, a timer and five lives.",
+    "screenLabel": "Board",
+    "screenSub": "Own field and own life cycle",
+    "roundLabel": "Round",
+    "roundSub": "Shared question shape, timer and five lives",
+    "auditLabel": "Status",
+    "auditTitle": "Honest about readiness",
+    "auditBody": "There is no application code yet, only the plan. The lexicon is not imported, the audio is not copied, and no recording has been checked by a native speaker. The text size already works — it is driven by a single CSS variable.",
+    "auditLink": "Read the plan",
+    "footer": "Пружинки · in design"
+  },
+  "settings": {
+    "nav": "Settings",
+    "eyebrow": "Settings",
+    "title": "Reading",
+    "intro": "The text size applies immediately. The remaining settings arrive with the local progress store.",
+    "textTitle": "Text size",
+    "textHint": "Six steps. Every text size in the app changes, captions included.",
+    "voiceTitle": "Voice",
+    "voiceHint": "Two speakers from one Piper model. The choice changes the timbre, not the quality: both versions are synthetic.",
+    "voicePending": "The voice becomes available once the audio is imported.",
+    "audioTitle": "Unreviewed recordings",
+    "audioHint": "The switch removes the listen buttons for unreviewed recordings instead of silencing them. The synthetic-audio note stays either way.",
+    "dataTitle": "Progress",
+    "dataHint": "Progress is stored on this device only. There is no file export yet, and clearing the app data deletes it for good."
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Пружинки",
+    "bodyFirst": "The name is թունջիկ, a diminutive of թունջ “to jump”, so “the hopping toy”. The Russian “Пружинки” is a playful gloss after the image of a spring toy, not a literal translation.",
+    "bodySecond": "This app does not replace the Arahet course, it trains its lexicon differently: not “finish a lesson” but “practise what you know”. Its progress is separate — Arahet's progress is neither read nor updated.",
+    "bodyThird": "The visual system is shared with Arahet: the same paper, the same typefaces, the same grid. What differs is the accent — ochre instead of rust — and the fact that the reward is drawn rather than pasted in as emoji.",
+    "sourceLabel": "Sources",
+    "sourceBody": "The lexicon is merged from Arahet's registry and the vocabulary of the aybuch project. The audio is synthesised with the hy_AM-tigran_nune-medium model, distributed under GPL-2.0; the right to distribute the generated clips has not been verified and remains a release blocker.",
+    "back": "Back to home"
+  },
+  "accessibility": {
+    "brandHome": "Go to home",
+    "mainNavigation": "Main navigation",
+    "settings": "Settings",
+    "languagePicker": "Interface language",
+    "art": "Placeholder art"
+  },
+  "meta": {
+    "documentTitle": "Пружинки — games for learning Armenian words",
+    "documentDescription": "Пружинки — games for learning Armenian words. Themed decks, pair matching, audio bingo, writing and SM-2 review."
+  }
+}
