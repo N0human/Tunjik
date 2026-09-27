@@ -66,12 +66,22 @@ export interface LexiconProvenance {
   };
 }
 
-/** A deck is a filter over the active registry, never a stored list. */
+/** Copied from the aybuch seed: both languages, so deck names are not
+ *  re-translated here. */
+export interface LexiconTheme {
+  id: string;
+  title: { ru: string; en: string };
+  icon: string;
+  count: number;
+}
+
+/** A deck is a filter over the active registry, never a stored list: a stored
+ *  list would be a second source of truth and would drift on every re-import. */
 export type DeckFilter =
   | { kind: 'all' }
   | { kind: 'theme'; themeId: string }
   | { kind: 'level'; level: LexiconLevel }
-  | { kind: 'arahet-grammar' };
+  | { kind: 'arahet-teaching' };
 
 export interface DeckDefinition {
   id: string;

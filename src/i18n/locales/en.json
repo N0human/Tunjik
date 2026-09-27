@@ -73,5 +73,44 @@
   "meta": {
     "documentTitle": "Пружинки — games for learning Armenian words",
     "documentDescription": "Пружинки — games for learning Armenian words. Themed decks, pair matching, audio bingo, writing and SM-2 review."
+  },
+  "modes": {
+    "pairs": "Pairs",
+    "bingo": "Audio bingo",
+    "srs": "Cards",
+    "quiz": "Choice",
+    "reverse": "Reversed",
+    "listen": "Listen",
+    "catch-letter": "Catch a letter",
+    "typing": "Type it",
+    "dictation": "Dictation",
+    "constructor": "Build the word",
+    "translit": "Armenian letters",
+    "number-marathon": "Numbers",
+    "fill-letter": "Missing letter",
+    "odd-one": "Odd one",
+    "familyScreen": "Board games",
+    "familyRound": "Round games",
+    "reasonTooFew": "not enough material in the deck",
+    "reasonDuplicateMeanings": "meanings repeat",
+    "reasonDuplicateLetters": "first letters repeat",
+    "reasonNoThemeCluster": "no three words from one theme"
+  },
+  "decks": {
+    "level-a1": "Level A1",
+    "level-a2": "Level A2",
+    "level-b1": "Level B1",
+    "level-b2": "Level B2",
+    "teaching": "Arahet grammar",
+    "all": "Everything"
+  },
+  "audit": {
+    "ok": "in order",
+    "decks": "decks",
+    "modes": "modes",
+    "activeOn": "modes available on average",
+    "orphans": "records outside every deck",
+    "silent": "records without audio",
+    "unavailable": "unavailable in every deck"
   }
 }

@@ -47,6 +47,7 @@ const audioOut = join(root, 'public', 'audio');
 const manifestPath = join(root, 'src', 'content', 'audio-manifest.json');
 const lexiconPath = join(root, 'src', 'content', 'lexicon.json');
 const provenancePath = join(root, 'src', 'content', 'provenance.json');
+const themesPath = join(root, 'src', 'content', 'themes.json');
 
 type ArahetItem = {
   id: string;
@@ -65,6 +66,11 @@ type ArahetManifestEntry = {
   reviewed: boolean;
   source?: string;
   voices: Record<string, string>;
+};
+type AybuchTheme = {
+  id: string;
+  title: { ru: string; en?: string };
+  icon: string;
 };
 type AybuchWord = {
   id: string;
@@ -213,7 +219,9 @@ async function main(): Promise<void> {
   const arahetManifest = readJson<Record<string, ArahetManifestEntry>>(
     join(arahetDir, 'src', 'content', 'audio-manifest.json'),
   );
-  const aybuchSeed = readJson<{ words: AybuchWord[] }>(join(aybuchDir, 'assets', 'content', 'words.seed.json'));
+  const aybuchSeed = readJson<{ words: AybuchWord[]; themes: AybuchTheme[] }>(
+    join(aybuchDir, 'assets', 'content', 'words.seed.json'),
+  );
   const aybuchStatic = Object.fromEntries(
     readJson<{ id: string; text: string }[]>(join(aybuchDir, 'assets', 'content', 'static_audio.json')).map((entry) => [
       entry.id,
@@ -418,6 +426,27 @@ async function main(): Promise<void> {
     },
   };
 
+  // Themes are copied from the source, ru and en both, so the deck names in
+  // the interface are not re-translated here.
+  const themeCounts = new Map<string, number>();
+  for (const entry of active) {
+    if (!entry.themeId) continue;
+    themeCounts.set(entry.themeId, (themeCounts.get(entry.themeId) ?? 0) + 1);
+  }
+  const themes = aybuchSeed.themes
+    .map((theme) => ({
+      id: theme.id,
+      title: { ru: theme.title.ru, en: theme.title.en ?? '' },
+      icon: theme.icon,
+      count: themeCounts.get(theme.id) ?? 0,
+    }))
+    .sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
+  const missingThemeTitles = themes.filter((theme) => !theme.title.en);
+  if (missingThemeTitles.length > 0) {
+    throw new Error(`у тем нет английского названия: ${missingThemeTitles.map((t) => t.id).join(', ')}`);
+  }
+  const unthemed = active.filter((entry) => !entry.themeId).length;
+
   const sorted = [...all].sort((a, b) => {
     if (order[a.source] !== order[b.source]) return order[a.source] - order[b.source];
     if (a.kind !== b.kind) return a.kind.localeCompare(b.kind);
@@ -426,6 +455,7 @@ async function main(): Promise<void> {
   writeFileSync(lexiconPath, `${JSON.stringify(sorted)}\n`);
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
   writeFileSync(provenancePath, `${JSON.stringify(provenance, null, 2)}\n`);
+  writeFileSync(themesPath, `${JSON.stringify(themes)}\n`);
 
   console.log('');
   console.log(`импортировано ${all.length}: arahet ${bySource.arahet}, aybuch ${bySource.aybuch}, числа ${bySource.derived}`);
@@ -444,7 +474,9 @@ async function main(): Promise<void> {
   }
   if (missing.length > 0) console.log(`нет audioId: ${missing.length} — ${missing.slice(0, 6).join(', ')}${missing.length > 6 ? ', …' : ''}`);
   console.log('');
-  console.log('записано: src/content/lexicon.json, src/content/audio-manifest.json, src/content/provenance.json, public/audio/');
+  console.log(`тем: ${themes.length}, из них пригодных для колод ${themes.filter((t) => t.id !== 'basics' && t.count >= 6).length}`);
+  console.log(`активных записей без темы: ${unthemed}`);
+  console.log('записано: src/content/lexicon.json, src/content/themes.json, src/content/audio-manifest.json, src/content/provenance.json, public/audio/');
 }
 
 await main();

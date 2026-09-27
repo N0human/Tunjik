@@ -73,5 +73,44 @@
   "meta": {
     "documentTitle": "Пружинки — игры для запоминания армянских слов",
     "documentDescription": "Пружинки — игры для запоминания армянских слов. Тематические колоды, пары, аудио-бинго, письмо и повторение SM-2."
+  },
+  "modes": {
+    "pairs": "Пары",
+    "bingo": "Аудио-бинго",
+    "srs": "Карточки",
+    "quiz": "Выбор",
+    "reverse": "Наоборот",
+    "listen": "Услышал",
+    "catch-letter": "Поймай букву",
+    "typing": "Пишем слово",
+    "dictation": "Диктант",
+    "constructor": "Собери слово",
+    "translit": "Армянскими буквами",
+    "number-marathon": "Числа",
+    "fill-letter": "Допиши",
+    "odd-one": "Чужой",
+    "familyScreen": "Экранные игры",
+    "familyRound": "Раундовые игры",
+    "reasonTooFew": "в колоде не хватает материала",
+    "reasonDuplicateMeanings": "смыслы повторяются",
+    "reasonDuplicateLetters": "первые буквы повторяются",
+    "reasonNoThemeCluster": "нет трёх слов одной темы"
+  },
+  "decks": {
+    "level-a1": "Уровень A1",
+    "level-a2": "Уровень A2",
+    "level-b1": "Уровень B1",
+    "level-b2": "Уровень B2",
+    "teaching": "Грамматика Arahet",
+    "all": "Всё подряд"
+  },
+  "audit": {
+    "ok": "в порядке",
+    "decks": "колод",
+    "modes": "режимов",
+    "activeOn": "режимов доступно в среднем",
+    "orphans": "записей вне колод",
+    "silent": "записей без озвучки",
+    "unavailable": "недоступно ни в одной колоде"
   }
 }
