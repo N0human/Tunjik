@@ -16,6 +16,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "typecheck": "tsc -b --pretty",
     "validate:content": "tsx scripts/validate-content.ts",
+    "import:lexicon": "tsx scripts/import-lexicon.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test"
